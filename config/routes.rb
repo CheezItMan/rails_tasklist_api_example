@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   post 'todo' => 'todo#create'
 
+  put 'todo/:id' => 'todo#update'
+
   delete 'todo/:id' => 'todo#destroy'
 
   get 'todo/search' => 'todo#search'

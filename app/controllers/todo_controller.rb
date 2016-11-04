@@ -5,7 +5,6 @@ class TodoController < ApplicationController
     tasks = Todo.all
 
     render :json => tasks, :status => :ok
-    logger.debug "Sending back #{tasks.as_json()}"
   end
 
   def show
@@ -22,6 +21,11 @@ class TodoController < ApplicationController
     puts "Create Params = #{params.to_s}"
   end
 
+  def update
+    logger.debug "Create Params = #{params.to_s}"
+    puts "Create Params = #{params.to_s}"
+  end
+
   def destroy
     logger.debug "Create Params = #{params.to_s}"
     puts "Create Params = #{params.to_s}"
@@ -34,7 +38,7 @@ class TodoController < ApplicationController
   private
     def set_headers
       headers['Access-Control-Allow-Origin'] = '*'
-      headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
+      headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS, PATCH'
       headers['Access-Control-Request-Method'] = '*'
       headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
     end
